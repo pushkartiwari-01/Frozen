@@ -6,6 +6,8 @@ import WhyChooseUs from "../components/WhyChooseUs";
 import BulkOrders from "../components/BulkOrders";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
       <BulkOrders />
       <Testimonials />
       <FAQ />
+      <Contact />
+      <Footer />
     </>
   );
 };
