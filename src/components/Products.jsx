@@ -1,34 +1,26 @@
-import bottle250 from "../assets/products/250ml.png";
-import bottle500 from "../assets/products/500ml.png";
+import bottle500 from "../assets/products/500mL.png";
 import bottle1L from "../assets/products/1L.png";
-import bottle2L from "../assets/products/2L.png";
-import jar20L from "../assets/products/20L.png";
+import pack12 from "../assets/products/12pack.png";
+
 
 const products = [
   {
-    name: "250ml Bottle",
-    image: bottle250,
-    desc: "Perfect for travel, events, and meetings",
-  },
-  {
     name: "500ml Bottle",
     image: bottle500,
-    desc: "Daily hydration on the go",
+    price: "₹10",
+    desc: "Perfect for travel, events and daily refreshment.",
   },
   {
     name: "1L Bottle",
     image: bottle1L,
-    desc: "Ideal for everyday hydration",
+    price: "₹20",
+    desc: "Ideal for everyday hydration and personal use.",
   },
   {
-    name: "2L Bottle",
-    image: bottle2L,
-    desc: "Perfect for family use",
-  },
-  {
-    name: "20L Water Jar",
-    image: jar20L,
-    desc: "Bulk supply for homes and offices",
+    name: "Pack of 12 Bottles",
+    image: pack12,
+    price: "₹120",
+    desc: "Best value for offices, families and bulk requirements.",
   },
 ];
 
