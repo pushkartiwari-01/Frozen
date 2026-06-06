@@ -1,4 +1,4 @@
-import bottle500 from "../assets/products/500mL.png";
+import bottle500 from "../assets/products/500ml.png";
 import bottle1L from "../assets/products/1L.png";
 import pack12 from "../assets/products/12pack.png";
 
