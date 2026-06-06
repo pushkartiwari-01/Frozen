@@ -1,4 +1,9 @@
-const navItems = ["Home", "Products", "Bulk Orders", "Contact"];
+const navItems = [
+  { name: "Home", link: "#home" },
+  { name: "Products", link: "#products" },
+  { name: "Bulk Orders", link: "#bulk-orders" },
+  { name: "Contact", link: "#contact" },
+];
 
 const Navbar = () => {
   return (
@@ -15,53 +20,54 @@ const Navbar = () => {
         "
       >
         {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer">
+        <a href="#home" className="flex items-center gap-3 cursor-pointer">
           <div className="w-3 h-3 rounded-full bg-blue-400 animate-pulse"></div>
 
           <h1 className="text-white text-2xl font-bold tracking-wider">
             FROZEN PURE
           </h1>
-        </div>
+        </a>
 
         {/* Navigation */}
         <ul className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
-            <li
-              key={item}
-              className="
-                relative
-                group
-                cursor-pointer
-                text-white
-                font-medium
-                transition-all
-                duration-300
-                hover:text-blue-300
-                hover:-translate-y-1
-              "
-            >
-              {item}
-
-              {/* Animated Underline */}
-              <span
+            <li key={item.name}>
+              <a
+                href={item.link}
                 className="
-                  absolute
-                  left-0
-                  -bottom-1
-                  h-[2px]
-                  w-0
-                  bg-blue-400
+                  relative
+                  group
+                  text-white
+                  font-medium
                   transition-all
                   duration-300
-                  group-hover:w-full
+                  hover:text-blue-300
+                  hover:-translate-y-1
                 "
-              ></span>
+              >
+                {item.name}
+
+                <span
+                  className="
+                    absolute
+                    left-0
+                    -bottom-1
+                    h-[2px]
+                    w-0
+                    bg-blue-400
+                    transition-all
+                    duration-300
+                    group-hover:w-full
+                  "
+                ></span>
+              </a>
             </li>
           ))}
         </ul>
 
         {/* CTA Button */}
-        <button
+        <a
+          href="#contact"
           className="
             hidden md:block
             bg-blue-600
@@ -77,7 +83,7 @@ const Navbar = () => {
           "
         >
           Get Quote
-        </button>
+        </a>
       </div>
     </nav>
   );

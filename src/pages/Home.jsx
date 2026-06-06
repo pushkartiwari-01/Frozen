@@ -8,6 +8,7 @@ import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <FAQ />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };

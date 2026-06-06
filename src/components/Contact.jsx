@@ -24,7 +24,7 @@ const Contact = () => {
           <div className="bg-blue-50 p-8 rounded-3xl text-center">
             <FaPhoneAlt className="text-4xl text-blue-600 mx-auto mb-4" />
             <h3 className="font-bold text-xl mb-2">Call Us</h3>
-            <p>Your Phone Number</p>
+            <p>7223957928</p>
           </div>
 
           <div className="bg-blue-50 p-8 rounded-3xl text-center">

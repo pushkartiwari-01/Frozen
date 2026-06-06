@@ -2,9 +2,13 @@ import { FaBuilding, FaHotel, FaStore, FaCalendarAlt } from "react-icons/fa";
 
 const BulkOrders = () => {
   return (
-    <section className="py-28 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+    <section
+      id="bulk-orders"
+      className="py-28 bg-gradient-to-r from-blue-900 to-blue-700 text-white"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
         <div className="text-center mb-16">
           <span className="uppercase tracking-widest text-blue-200">
             Bulk Supply
@@ -20,70 +24,80 @@ const BulkOrders = () => {
           </p>
         </div>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
 
-          <div className="
-bg-white/10
-backdrop-blur-lg
-rounded-3xl
-p-8
-transition-all
-duration-300
-hover:-translate-y-3
-hover:bg-white/20
-hover:shadow-2xl
-">
+          <div
+            className="
+              bg-white/10
+              backdrop-blur-lg
+              rounded-3xl
+              p-8
+              transition-all
+              duration-300
+              hover:-translate-y-3
+              hover:bg-white/20
+              hover:shadow-2xl
+            "
+          >
             <FaBuilding className="text-5xl mb-5" />
             <h3 className="font-bold text-xl">Corporate Offices</h3>
           </div>
 
-          <div className="
-bg-white/10
-backdrop-blur-lg
-rounded-3xl
-p-8
-transition-all
-duration-300
-hover:-translate-y-3
-hover:bg-white/20
-hover:shadow-2xl
-">
+          <div
+            className="
+              bg-white/10
+              backdrop-blur-lg
+              rounded-3xl
+              p-8
+              transition-all
+              duration-300
+              hover:-translate-y-3
+              hover:bg-white/20
+              hover:shadow-2xl
+            "
+          >
             <FaHotel className="text-5xl mb-5" />
             <h3 className="font-bold text-xl">Hotels</h3>
           </div>
 
-          <div className="
-bg-white/10
-backdrop-blur-lg
-rounded-3xl
-p-8
-transition-all
-duration-300
-hover:-translate-y-3
-hover:bg-white/20
-hover:shadow-2xl
-">
+          <div
+            className="
+              bg-white/10
+              backdrop-blur-lg
+              rounded-3xl
+              p-8
+              transition-all
+              duration-300
+              hover:-translate-y-3
+              hover:bg-white/20
+              hover:shadow-2xl
+            "
+          >
             <FaStore className="text-5xl mb-5" />
             <h3 className="font-bold text-xl">Retail Stores</h3>
           </div>
 
-          <div className="
-bg-white/10
-backdrop-blur-lg
-rounded-3xl
-p-8
-transition-all
-duration-300
-hover:-translate-y-3
-hover:bg-white/20
-hover:shadow-2xl
-">
+          <div
+            className="
+              bg-white/10
+              backdrop-blur-lg
+              rounded-3xl
+              p-8
+              transition-all
+              duration-300
+              hover:-translate-y-3
+              hover:bg-white/20
+              hover:shadow-2xl
+            "
+          >
             <FaCalendarAlt className="text-5xl mb-5" />
             <h3 className="font-bold text-xl">Events & Functions</h3>
           </div>
 
         </div>
 
+        {/* CTA */}
         <div className="text-center">
           <a
             href="https://wa.me/91XXXXXXXXXX"
@@ -98,8 +112,10 @@ hover:shadow-2xl
               rounded-full
               font-bold
               text-lg
+              transition-all
+              duration-300
               hover:scale-105
-              transition
+              hover:shadow-xl
             "
           >
             Request Bulk Quote

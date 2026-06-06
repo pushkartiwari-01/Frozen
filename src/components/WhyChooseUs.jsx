@@ -53,24 +53,27 @@ const WhyChooseUs = () => {
             <div
               key={index}
               className="
-                group
-                bg-white
-                p-8
-                rounded-3xl
-                shadow-lg
-                border border-slate-100
-                hover:-translate-y-3
-                hover:shadow-2xl
-                transition-all
-                duration-500
+               group
+bg-white/80
+backdrop-blur-lg
+p-8
+rounded-3xl
+shadow-lg
+border
+border-blue-100
+transition-all
+duration-500
+hover:-translate-y-4
+hover:shadow-[0_20px_50px_rgba(59,130,246,0.20)]
               "
             >
               <div
                 className="
-                  text-5xl
+                  text-6xl
                   text-blue-600
                   mb-6
-                  group-hover:scale-110
+                  group-hover:scale-125
+group-hover:rotate-6
                   transition
                 "
               >
