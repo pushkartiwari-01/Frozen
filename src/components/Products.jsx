@@ -1,8 +1,8 @@
-import bottle250 from "../assets/products/250ml.png";
-import bottle500 from "../assets/products/500ml.png";
-import bottle1L from "../assets/products/1l.png";
-import bottle2L from "../assets/products/2l.png";
-import jar20L from "../assets/products/20l.png";
+import bottle250 from "../assets/products/250mL.png";
+import bottle500 from "../assets/products/500mL.png";
+import bottle1L from "../assets/products/1L.png";
+import bottle2L from "../assets/products/2L.png";
+import jar20L from "../assets/products/20L.png";
 
 const products = [
   {
