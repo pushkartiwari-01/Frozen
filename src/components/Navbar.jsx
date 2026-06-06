@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
+
 const navItems = [
   { name: "Home", link: "#home" },
   { name: "Products", link: "#products" },
@@ -6,12 +9,14 @@ const navItems = [
 ];
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
       <div
         className="
           flex items-center justify-between
-          px-8 py-3
+          px-6 md:px-8 py-3
           rounded-full
           backdrop-blur-xl
           bg-white/5
@@ -20,15 +25,15 @@ const Navbar = () => {
         "
       >
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 cursor-pointer">
+        <a href="#home" className="flex items-center gap-3">
           <div className="w-3 h-3 rounded-full bg-blue-400 animate-pulse"></div>
 
-          <h1 className="text-white text-2xl font-bold tracking-wider">
+          <h1 className="text-white text-xl md:text-2xl font-bold tracking-wider">
             FROZEN PURE
           </h1>
         </a>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <li key={item.name}>
@@ -42,7 +47,6 @@ const Navbar = () => {
                   transition-all
                   duration-300
                   hover:text-blue-300
-                  hover:-translate-y-1
                 "
               >
                 {item.name}
@@ -65,7 +69,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* CTA Button */}
+        {/* Desktop Button */}
         <a
           href="#contact"
           className="
@@ -79,12 +83,64 @@ const Navbar = () => {
             transition-all
             duration-300
             hover:scale-105
-            hover:shadow-xl
           "
         >
           Get Quote
         </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-white text-3xl"
+        >
+          {menuOpen ? <HiX /> : <HiMenu />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div
+          className="
+            md:hidden
+            mt-3
+            rounded-3xl
+            backdrop-blur-xl
+            bg-black/60
+            border border-white/10
+            p-6
+          "
+        >
+          <ul className="flex flex-col gap-5 text-white text-lg">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.link}
+                  onClick={() => setMenuOpen(false)}
+                  className="block hover:text-blue-300 transition"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="
+              block
+              text-center
+              mt-6
+              bg-blue-600
+              py-3
+              rounded-xl
+              font-semibold
+            "
+          >
+            Get Quote
+          </a>
+        </div>
+      )}
     </nav>
   );
 };
