@@ -1,0 +1,11 @@
+ <TrustBar />
+      <Stats />
+      <Products />
+      <WhyChooseUs />
+      <BulkOrders />
+      <Testimonials />
+      <FAQ />
+      <Contact />
+      <Footer />
+      <WhatsAppButton />
+      
