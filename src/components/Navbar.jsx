@@ -45,7 +45,7 @@ const Navbar = () => {
         duration-500
         ${
           showNavbar
-            ? "top-5 opacity-100"
+            ? "top-4 md:top-5 opacity-100"
             : "-top-24 opacity-0"
         }
       `}
@@ -53,7 +53,8 @@ const Navbar = () => {
       <div
         className="
           flex items-center justify-between
-          px-6 md:px-8 py-3
+          px-4 sm:px-6 md:px-8
+          py-3
           rounded-full
           backdrop-blur-xl
           bg-white/5
@@ -62,10 +63,14 @@ const Navbar = () => {
         "
       >
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-blue-400 animate-pulse"></div>
+        <a
+          href="#home"
+          onClick={() => setMenuOpen(false)}
+          className="flex items-center gap-2 md:gap-3"
+        >
+          <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-blue-400 animate-pulse"></div>
 
-          <h1 className="text-white text-xl md:text-2xl font-bold tracking-wider">
+          <h1 className="text-white text-base sm:text-lg md:text-2xl font-bold tracking-wider">
             FROZEN PURE
           </h1>
         </a>
@@ -120,7 +125,7 @@ const Navbar = () => {
             transition-all
             duration-300
             hover:scale-105
-            hover:shadow-xl
+            hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
           "
         >
           Get Quote
@@ -129,18 +134,33 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white text-3xl"
+          className="
+            md:hidden
+            text-white
+            text-3xl
+            p-1
+          "
         >
           {menuOpen ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
+      <div
+        className={`
+          md:hidden
+          overflow-hidden
+          transition-all
+          duration-300
+          ${
+            menuOpen
+              ? "max-h-96 opacity-100 mt-3"
+              : "max-h-0 opacity-0"
+          }
+        `}
+      >
         <div
           className="
-            md:hidden
-            mt-3
             rounded-3xl
             backdrop-blur-xl
             bg-black/80
@@ -155,7 +175,12 @@ const Navbar = () => {
                 <a
                   href={item.link}
                   onClick={() => setMenuOpen(false)}
-                  className="block hover:text-blue-300 transition"
+                  className="
+                    block
+                    py-1
+                    hover:text-blue-300
+                    transition
+                  "
                 >
                   {item.name}
                 </a>
@@ -182,7 +207,7 @@ const Navbar = () => {
             Get Quote
           </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

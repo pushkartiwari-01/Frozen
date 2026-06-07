@@ -5,13 +5,15 @@ const Hero = () => {
     <section
       id="home"
       className="
-relative
-min-h-screen
-overflow-hidden
-flex
-items-center
-pb-20
-"
+        relative
+        min-h-[85vh]
+        md:min-h-screen
+        overflow-hidden
+        flex
+        items-center
+        pb-12
+        md:pb-20
+      "
     >
       {/* Background Image */}
       <img
@@ -23,7 +25,7 @@ pb-20
           w-full
           h-full
           object-cover
-          object-right
+          object-[75%]
           md:object-center
         "
       />
@@ -36,7 +38,7 @@ pb-20
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="max-w-2xl">
+        <div className="max-w-xl md:max-w-2xl">
 
           {/* Badge */}
           <span className="inline-block mb-6 bg-white/10 backdrop-blur-md text-white px-4 py-2 rounded-full border border-white/20 text-sm md:text-base">
@@ -47,7 +49,7 @@ pb-20
           <h1
             className="
               text-white
-              text-4xl
+              text-3xl
               sm:text-5xl
               md:text-7xl
               font-black
@@ -60,7 +62,7 @@ pb-20
           </h1>
 
           {/* Description */}
-          <p className="mt-6 text-base md:text-xl text-blue-100 max-w-xl">
+          <p className="mt-5 text-sm sm:text-base md:text-xl text-blue-100 max-w-xl">
             Experience pure hydration inspired by glacier freshness.
             Quality drinking water for homes, offices, businesses,
             and bulk supply needs.
@@ -69,38 +71,40 @@ pb-20
           {/* Trust Pills */}
           <div className="flex flex-wrap gap-2 mt-8">
 
-            <div className="bg-white/10 backdrop-blur-lg px-3 py-2 rounded-full text-white text-sm">
+            <div className="bg-white/10 backdrop-blur-lg px-3 py-2 rounded-full text-white text-xs sm:text-sm">
               💧 100% Purified
             </div>
 
-            <div className="bg-white/10 backdrop-blur-lg px-3 py-2 rounded-full text-white text-sm">
+            <div className="bg-white/10 backdrop-blur-lg px-3 py-2 rounded-full text-white text-xs sm:text-sm">
               🚚 Fast Delivery
             </div>
 
-            <div className="bg-white/10 backdrop-blur-lg px-3 py-2 rounded-full text-white text-sm">
+            <div className="bg-white/10 backdrop-blur-lg px-3 py-2 rounded-full text-white text-xs sm:text-sm">
               🏢 Bulk Supply
             </div>
 
           </div>
 
           {/* Buttons */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
 
             <a
               href="#products"
               className="
                 text-center
+                w-full
+                sm:w-auto
                 bg-blue-600
                 hover:bg-blue-700
                 text-white
                 px-8
-                py-4
+                py-3.5
                 rounded-full
                 font-semibold
                 transition-all
                 duration-300
                 hover:scale-105
-                hover:shadow-xl
+                hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
               "
             >
               Explore Products
@@ -110,13 +114,15 @@ pb-20
               href="#bulk-orders"
               className="
                 text-center
+                w-full
+                sm:w-auto
                 bg-white/10
                 backdrop-blur-md
                 border
                 border-white/30
                 text-white
                 px-8
-                py-4
+                py-3.5
                 rounded-full
                 font-semibold
                 transition-all
