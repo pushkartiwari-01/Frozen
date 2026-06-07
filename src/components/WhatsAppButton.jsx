@@ -25,7 +25,7 @@ const SocialButtons = () => {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/91XXXXXXXXXX"
+        href="https://wa.me/7223957928"
         target="_blank"
         rel="noopener noreferrer"
         className="

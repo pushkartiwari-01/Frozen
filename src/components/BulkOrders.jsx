@@ -117,7 +117,7 @@ const BulkOrders = () => {
         {/* CTA */}
         <div className="text-center">
           <a
-            href="https://wa.me/91XXXXXXXXXX"
+            href="https://wa.me/7223957928"
             target="_blank"
             rel="noreferrer"
             className="
