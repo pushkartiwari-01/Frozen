@@ -5,6 +5,8 @@ import {
   FaRecycle,
 } from "react-icons/fa";
 
+import { motion} from "framer-motion";
+
 const features = [
   {
     icon: <FaTint />,
@@ -50,30 +52,36 @@ const WhyChooseUs = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {features.map((item, index) => (
-            <div
-              key={index}
-              className="
-               group
-bg-white/80
-backdrop-blur-lg
-p-8
-rounded-3xl
-shadow-lg
-border
-border-blue-100
-transition-all
-duration-500
-hover:-translate-y-4
-hover:shadow-[0_20px_50px_rgba(59,130,246,0.20)]
-              "
-            >
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{
+      duration: 0.6,
+      delay: index * 0.15,
+    }}
+    className="
+      group
+      bg-white/80
+      backdrop-blur-lg
+      p-8
+      rounded-3xl
+      shadow-lg
+      border
+      border-blue-100
+      transition-all
+      duration-500
+      hover:-translate-y-4
+      hover:shadow-[0_20px_50px_rgba(59,130,246,0.20)]
+    "
+  >
               <div
                 className="
                   text-6xl
                   text-blue-600
                   mb-6
-                  group-hover:scale-125
-group-hover:rotate-6
+                  group-hover:scale-125 group-hover:rotate-6
                   transition
                 "
               >
@@ -87,7 +95,7 @@ group-hover:rotate-6
               <p className="mt-3 text-slate-600">
                 {item.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 

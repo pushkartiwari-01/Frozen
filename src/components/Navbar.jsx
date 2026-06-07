@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 const navItems = [
@@ -10,9 +10,46 @@ const navItems = [
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      lastScrollY = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+    <nav
+      className={`
+        fixed
+        left-1/2
+        -translate-x-1/2
+        z-50
+        w-[95%]
+        max-w-7xl
+        transition-all
+        duration-500
+        ${
+          showNavbar
+            ? "top-5 opacity-100"
+            : "-top-24 opacity-0"
+        }
+      `}
+    >
       <div
         className="
           flex items-center justify-between
@@ -83,6 +120,7 @@ const Navbar = () => {
             transition-all
             duration-300
             hover:scale-105
+            hover:shadow-xl
           "
         >
           Get Quote
@@ -105,9 +143,10 @@ const Navbar = () => {
             mt-3
             rounded-3xl
             backdrop-blur-xl
-            bg-black/60
+            bg-black/80
             border border-white/10
             p-6
+            shadow-2xl
           "
         >
           <ul className="flex flex-col gap-5 text-white text-lg">
@@ -132,9 +171,12 @@ const Navbar = () => {
               text-center
               mt-6
               bg-blue-600
+              hover:bg-blue-700
               py-3
               rounded-xl
               font-semibold
+              transition-all
+              duration-300
             "
           >
             Get Quote

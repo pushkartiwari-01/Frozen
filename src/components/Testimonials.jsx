@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -41,44 +42,52 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className="
-                bg-white
-                rounded-3xl
-                p-8
-                shadow-lg
-                hover:shadow-2xl
-                hover:-translate-y-2
-                transition-all
-                duration-300
-              "
-            >
-              <div className="flex gap-1 text-yellow-400 mb-5">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
+  {testimonials.map((item, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.15,
+      }}
+      className="
+        bg-white
+        rounded-3xl
+        p-8
+        shadow-lg
+        hover:shadow-[0_20px_50px_rgba(59,130,246,0.20)]
+        hover:-translate-y-4
+        hover:scale-[1.02]
+        transition-all
+        duration-300
+      "
+    >
+      <div className="flex gap-1 text-yellow-400 mb-5">
+        <FaStar />
+        <FaStar />
+        <FaStar />
+        <FaStar />
+        <FaStar />
+      </div>
 
-              <p className="text-slate-600 leading-relaxed">
-                "{item.review}"
-              </p>
+      <p className="text-slate-600 leading-relaxed">
+        "{item.review}"
+      </p>
 
-              <div className="mt-6">
-                <h4 className="font-bold text-slate-900">
-                  {item.name}
-                </h4>
+      <div className="mt-6">
+        <h4 className="font-bold text-slate-900">
+          {item.name}
+        </h4>
 
-                <p className="text-blue-600 text-sm">
-                  {item.role}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <p className="text-blue-600 text-sm">
+          {item.role}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
       </div>
     </section>

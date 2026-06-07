@@ -24,12 +24,24 @@ body {
     transform: translateY(-20px);
   }
 }
-@keyframes float {
-  0%,100% {
-    transform: translateY(0px);
-  }
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  50% {
-    transform: translateY(-20px);
-  }
+::-webkit-scrollbar-track {
+  background: #e0f2fe;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+::selection {
+  background: #2563eb;
+  color: white;
 }

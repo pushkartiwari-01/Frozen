@@ -1,4 +1,5 @@
 import { FaBuilding, FaHotel, FaStore, FaCalendarAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const BulkOrders = () => {
   return (
@@ -25,77 +26,93 @@ const BulkOrders = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
 
-          <div
-            className="
-              bg-white/10
-              backdrop-blur-lg
-              rounded-3xl
-              p-8
-              transition-all
-              duration-300
-              hover:-translate-y-3
-              hover:bg-white/20
-              hover:shadow-2xl
-            "
-          >
-            <FaBuilding className="text-5xl mb-5" />
-            <h3 className="font-bold text-xl">Corporate Offices</h3>
-          </div>
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6 }}
+    className="
+      bg-white/10
+      backdrop-blur-lg
+      rounded-3xl
+      p-8
+      transition-all
+      duration-300
+      hover:-translate-y-3
+      hover:bg-white/20
+      hover:shadow-2xl
+    "
+  >
+    <FaBuilding className="text-5xl mb-5" />
+    <h3 className="font-bold text-xl">Corporate Offices</h3>
+  </motion.div>
 
-          <div
-            className="
-              bg-white/10
-              backdrop-blur-lg
-              rounded-3xl
-              p-8
-              transition-all
-              duration-300
-              hover:-translate-y-3
-              hover:bg-white/20
-              hover:shadow-2xl
-            "
-          >
-            <FaHotel className="text-5xl mb-5" />
-            <h3 className="font-bold text-xl">Hotels</h3>
-          </div>
+  <motion.div
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.1 }}
+    className="
+      bg-white/10
+      backdrop-blur-lg
+      rounded-3xl
+      p-8
+      transition-all
+      duration-300
+      hover:-translate-y-3
+      hover:bg-white/20
+      hover:shadow-2xl
+    "
+  >
+    <FaHotel className="text-5xl mb-5" />
+    <h3 className="font-bold text-xl">Hotels</h3>
+  </motion.div>
 
-          <div
-            className="
-              bg-white/10
-              backdrop-blur-lg
-              rounded-3xl
-              p-8
-              transition-all
-              duration-300
-              hover:-translate-y-3
-              hover:bg-white/20
-              hover:shadow-2xl
-            "
-          >
-            <FaStore className="text-5xl mb-5" />
-            <h3 className="font-bold text-xl">Retail Stores</h3>
-          </div>
+  <motion.div
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.2 }}
+    className="
+      bg-white/10
+      backdrop-blur-lg
+      rounded-3xl
+      p-8
+      transition-all
+      duration-300
+      hover:-translate-y-3
+      hover:bg-white/20
+      hover:shadow-2xl
+    "
+  >
+    <FaStore className="text-5xl mb-5" />
+    <h3 className="font-bold text-xl">Retail Stores</h3>
+  </motion.div>
 
-          <div
-            className="
-              bg-white/10
-              backdrop-blur-lg
-              rounded-3xl
-              p-8
-              transition-all
-              duration-300
-              hover:-translate-y-3
-              hover:bg-white/20
-              hover:shadow-2xl
-            "
-          >
-            <FaCalendarAlt className="text-5xl mb-5" />
-            <h3 className="font-bold text-xl">Events & Functions</h3>
-          </div>
+  <motion.div
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.3 }}
+    className="
+      bg-white/10
+      backdrop-blur-lg
+      rounded-3xl
+      p-8
+      transition-all
+      duration-300
+      hover:-translate-y-3
+      hover:bg-white/20
+      hover:shadow-2xl
+    "
+  >
+    <FaCalendarAlt className="text-5xl mb-5" />
+    <h3 className="font-bold text-xl">Events & Functions</h3>
+  </motion.div>
 
-        </div>
+</div>
 
         {/* CTA */}
         <div className="text-center">

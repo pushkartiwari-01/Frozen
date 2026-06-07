@@ -6,7 +6,7 @@ const SocialButtons = () => {
 
       {/* Instagram */}
       <a
-        href="https://instagram.com/yourusername"
+        href="https://instagram.com/frozenpure_ind"
         target="_blank"
         rel="noopener noreferrer"
         className="

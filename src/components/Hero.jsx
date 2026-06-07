@@ -5,13 +5,13 @@ const Hero = () => {
     <section
       id="home"
       className="
-        relative
-        min-h-[90vh]
-        md:min-h-screen
-        overflow-hidden
-        flex
-        items-center
-      "
+relative
+min-h-screen
+overflow-hidden
+flex
+items-center
+pb-20
+"
     >
       {/* Background Image */}
       <img

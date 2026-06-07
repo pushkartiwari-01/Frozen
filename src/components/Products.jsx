@@ -1,6 +1,14 @@
+import { motion } from "framer-motion";
 import bottle500 from "../assets/products/500ml.png";
 import bottle1L from "../assets/products/1L.png";
 import pack12 from "../assets/products/12pack.png";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const products = [
   {
@@ -30,7 +38,7 @@ const Products = () => {
       className="py-28 bg-gradient-to-b from-white via-blue-50 to-white"
     >
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Heading */}
         <div className="text-center mb-20">
           <span className="text-blue-600 font-semibold tracking-[4px] uppercase">
@@ -47,90 +55,114 @@ const Products = () => {
           </p>
         </div>
 
-        {/* Product Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Product Slider */}
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation={true}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+        >
           {products.map((product, index) => (
-            <div
-              key={index}
-              className="
-                relative
-                group
-                bg-white
-                rounded-[30px]
-                p-6
-                border
-                border-blue-100
-                shadow-lg
-                overflow-hidden
-                transition-all
-                duration-500
-                hover:-translate-y-4
-                hover:shadow-[0_20px_50px_rgba(59,130,246,0.25)]
-              "
-            >
-              {/* Most Popular Badge */}
-              {product.name === "1L Bottle" && (
-                <div className="absolute top-5 left-5 z-10 bg-yellow-400 text-black text-xs font-bold px-4 py-2 rounded-full">
-                  ⭐ MOST POPULAR
-                </div>
-              )}
+            <SwiperSlide key={index}>
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{
+      duration: 0.6,
+      delay: index * 0.2,
+    }}
+  >
+              <div
+                className="
+                  relative
+                  group
+                  bg-white
+                  rounded-[30px]
+                  p-6
+                  border
+                  border-blue-100
+                  shadow-lg
+                  overflow-hidden
+                  transition-all
+                  duration-500
+                  hover:-translate-y-4
+                  hover:shadow-[0_20px_50px_rgba(59,130,246,0.25)]
+                "
+              >
+                {product.name === "1L Bottle" && (
+                  <div className="absolute top-5 left-5 z-10 bg-yellow-400 text-black text-xs font-bold px-4 py-2 rounded-full">
+                    ⭐ MOST POPULAR
+                  </div>
+                )}
 
-              {/* Product Image */}
-              <div className="h-96 flex items-center justify-center">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="
-                    h-full
-                    object-contain
-                    transition-all
-                    duration-500
-                    group-hover:scale-110
-                  "
-                />
-              </div>
-
-              {/* Product Info */}
-              <div className="text-center mt-4">
-                <h3 className="text-2xl font-bold text-slate-900">
-                  {product.name}
-                </h3>
-
-                {/* Price */}
-                <div className="inline-block bg-blue-600 text-white px-5 py-2 rounded-full font-bold text-lg mt-4">
-                  {product.price}
+                <div className="h-96 flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="
+                      h-full
+                      object-contain
+                      transition-all
+                      duration-500
+                      group-hover:scale-110
+                    "
+                  />
                 </div>
 
-                <p className="text-slate-500 mt-4 leading-relaxed">
-                  {product.desc}
-                </p>
+                <div className="text-center mt-4">
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {product.name}
+                  </h3>
 
-                {/* WhatsApp Button */}
-                <a
-                  href="https://wa.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    block
-                    w-full
-                    mt-6
-                    bg-blue-600
-                    hover:bg-blue-700
-                    text-white
-                    py-3
-                    rounded-xl
-                    font-semibold
-                    transition-all
-                    duration-300
-                    hover:scale-105
-                  "
-                >
-                  Order on WhatsApp
-                </a>
+                  <div className="inline-block bg-blue-600 text-white px-5 py-2 rounded-full font-bold text-lg mt-4">
+                    {product.price}
+                  </div>
+
+                  <p className="text-slate-500 mt-4 leading-relaxed">
+                    {product.desc}
+                  </p>
+
+                  <a
+                    href="https://wa.me/91XXXXXXXXXX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      block
+                      w-full
+                      mt-6
+                      bg-blue-600
+                      hover:bg-blue-700
+                      text-white
+                      py-3
+                      rounded-xl
+                      font-semibold
+                      transition-all
+                      duration-300
+                      hover:scale-105
+                    "
+                  >
+                    Order on WhatsApp
+                  </a>
+                </div>
               </div>
-            </div>
+                </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
       </div>
     </section>
